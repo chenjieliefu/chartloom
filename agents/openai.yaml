@@ -1,0 +1,7 @@
+interface:
+  display_name: "Chartloom"
+  short_description: "Editorial charts and bilingual HTML reports"
+  icon_small: "./assets/chartloom-mark.svg"
+  icon_large: "./assets/chartloom-logo.svg"
+  brand_color: "#FF5A36"
+  default_prompt: "Use $chartloom to turn this data into polished HTML charts by default. Only generate a complete bilingual-ready report when the user explicitly asks for a report, annual/monthly report, white paper, poster, brief, or similar narrative deliverable. Reuse the closest chart or report templates with one coherent color system."
