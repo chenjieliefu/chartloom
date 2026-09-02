@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
-  <title id="title">Chartloom mark</title>
-  <rect width="128" height="128" rx="30" fill="#1c1c1a"/>
-  <path d="M29 30v68M49 30v68M69 30v68M89 30v68" stroke="#f0efeb" stroke-width="6" stroke-linecap="round"/>
-  <path d="M24 82c15 0 17-33 33-33s18 23 31 23c8 0 12-9 16-18" fill="none" stroke="#ff5a36" stroke-width="9" stroke-linecap="round"/>
-</svg>
