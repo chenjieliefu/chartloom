@@ -1,8 +1,8 @@
-[English](README.en.md) | **简体中文**
+**English** | [简体中文](README.zh-CN.md)
 
 <div align="center">
   <h1>Chartloom</h1>
-  <p><strong>把数据变成可直接发布的编辑式图表与 HTML 报告。</strong></p>
+  <p><strong>Turn data into publishable editorial charts and HTML reports.</strong></p>
 </div>
 
 <p align="center">
@@ -13,88 +13,81 @@
 </p>
 
 <p align="center">
-  判断数据形状 → 选择真实模板 → 锁定色彩系统 → 生成单文件 HTML。
+  Read the data shape → choose a real template → lock one color system → generate a single-file HTML deliverable.
 </p>
 
 ---
 
-## 这是什么？
+## What is this?
 
-**Chartloom** 是一个面向 AI Agent 的数据可视化 Skill。它不会直接套用图表库默认样式，而是先判断数据形状，再从仓库内的真实模板中选型。
+**Chartloom** is a data-visualization Skill for AI agents. It identifies the data shape first, then chooses from real templates in the repository instead of falling back to a chart library's default style.
 
-默认交付精致的 HTML 图表。只有当用户明确要求报告、年报、月报、白皮书、海报或 brief 时，才使用整页报告模板。
+It produces polished HTML charts by default. Full-page templates are used only when the user explicitly asks for a report, annual report, monthly report, white paper, poster, or brief.
 
-## 为什么使用它？
+## Why use it?
 
-| 能力 | 作用 |
+| Capability | What it protects |
 |---|---|
-| 🧵 模板驱动 | 沿用已验证的图表结构，不临时发明一张“差不多”的图 |
-| 📐 诚实编码 | 保持长度、面积、颜色和真实数值的对应关系 |
-| 👁️ 两种阅读速度 | Lupi 适合细读，Glance 适合快速判断 |
-| 🎨 统一配色 | 一次交付只使用 Mono、Porcelain、Palm、Wire 或一套自定义色板 |
-| 📄 可发布输出 | 生成无需构建、双击可打开的单文件 HTML |
+| 🧵 Template-driven output | Reuses validated chart structures instead of inventing a similar-looking chart |
+| 📐 Honest encoding | Keeps length, area, color, and real values aligned |
+| 👁️ Two reading speeds | Lupi supports close reading; Glance supports fast decisions |
+| 🎨 One color system | Each delivery uses Mono, Porcelain, Palm, Wire, or one custom palette |
+| 📄 Publishable output | Produces a single HTML file that opens without a build step |
 
-## 它如何工作？
+## How it works
 
 ```mermaid
 flowchart LR
-    A["数据 + 用途"] --> B["判断数据形状"]
-    B --> C["比较 Lupi / Basics"]
-    C --> D["必要时使用 Glance / Maps / Interactive"]
-    D --> E["选择色彩系统"]
-    E --> F["生成并检查 HTML"]
+    A["Data + context"] --> B["Identify the data shape"]
+    B --> C["Compare Lupi / Basics"]
+    C --> D["Use Glance / Maps / Interactive when needed"]
+    D --> E["Choose one color system"]
+    E --> F["Generate and validate HTML"]
 ```
 
-## 模板
+## Templates
 
-| 类型 | 数量 | 适合场景 |
+| Family | Count | Best for |
 |---|---:|---|
-| Lupi Editorial | 20 | 长文、论文、年报、海报和数据故事 |
-| Lupi Basics | 17 | 柱、线、面积、散点、热力、箱线等基础图型 |
-| Glance | 22 | 周报、dashboard、监控和汇报 |
-| Maps | 2 | 美国地图和世界地图 |
-| Interactive | 3 | 网络、路径和高密度关系数据 |
-| Report Templates | 12 套中英文双版 | 调研、年报、月报、海报、简报和 dashboard |
+| Lupi Editorial | 20 | Long-form articles, papers, annual reports, posters, and data stories |
+| Lupi Basics | 17 | Bars, lines, areas, scatterplots, heatmaps, box plots, and other familiar forms |
+| Glance | 22 | Weekly reports, dashboards, monitoring, and presentations |
+| Maps | 2 | United States and world maps |
+| Interactive | 3 | Networks, paths, and dense relationship data |
+| Report Templates | 12 bilingual layouts | Research, annual, monthly, poster, brief, and dashboard reports |
 
-## 预览
+## Preview
 
-<table>
-  <tr>
-    <td width="50%"><img src="docs/assets/preview-lupi-01.png" alt="Lupi Editorial 预览" width="100%"></td>
-    <td width="50%"><img src="docs/assets/preview-glance-01.png" alt="Glance 预览" width="100%"></td>
-  </tr>
-</table>
+<p align="center"><img src="docs/assets/preview-lupi-01.png" alt="Chartloom chart preview" width="82%"></p>
 
-<p align="center"><img src="docs/assets/reports/report-09.png" alt="Chartloom 整页报告预览" width="72%"></p>
+[Open the interactive Force Graph template](https://chenjieliefu.github.io/chartloom/templates/big-force.html)
 
-[打开 Force Graph 交互模板](https://chenjieliefu.github.io/chartloom/templates/big-force.html)
+## Quick start
 
-## 快速开始
-
-### 安装
+### Install
 
 ```bash
 npx skills add https://github.com/chenjieliefu/chartloom --skill chartloom
 ```
 
-也可以把仓库克隆到个人 Skill 目录：
+Or clone the repository into your personal Skill directory:
 
 ```bash
 git clone https://github.com/chenjieliefu/chartloom \
   "${CODEX_HOME:-$HOME/.codex}/skills/chartloom"
 ```
 
-### 调用
+### Invoke
 
 ```text
-使用 $chartloom，把这份调研数据做成 3 张适合公众号的中文 HTML 图表。
+Use $chartloom to turn this survey data into three Chinese HTML charts for a long-form article.
 ```
 
 ```text
-使用 $chartloom，把这份月度业务数据做成一份中文 HTML 报告。
+Use $chartloom to turn this monthly business dataset into a Chinese HTML report.
 ```
 
-## 仓库结构
+## Repository structure
 
 ```text
 .
@@ -110,11 +103,11 @@ git clone https://github.com/chenjieliefu/chartloom \
 └── scripts/validate.mjs
 ```
 
-## 许可
+## License
 
-本项目使用 [PolyForm Noncommercial License 1.0.0](LICENSE)。允许学习、修改、分享和非商业使用；商业使用需要另行取得许可。
+This project is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE). Learning, modification, sharing, and noncommercial use are allowed. Commercial use requires separate permission.
 
-Chart.js、Apache ECharts 和 Inter 字体仍遵循各自的原始许可，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+Chart.js, Apache ECharts, and the Inter typeface remain under their original licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ---
 
